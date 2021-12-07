@@ -13,6 +13,8 @@ const screen = document.querySelector('.screen');
 
 const percentageButton = document.getElementById('percentage');
 
+const positveNegativeButton = document.getElementById('positive-negative');
+
 const ac = document.getElementById('ac');
 
 const addButton = document.getElementById('add');
@@ -187,6 +189,16 @@ const turnToPercentage = function() {
     }
 }
 
+const swicthPositiveNegative = function() {
+    if (resultRequested) {
+        screen.textContent = Number(screen.textContent) * -1;
+        runningFunction.result = Number(screen.textContent);
+        runningFunction.a = runningFunction.result;
+    } else {
+        screen.textContent = Number(screen.textContent) * -1;
+    }
+}
+
 const initialize = function() {
 
     numberButtons.forEach((button) => {
@@ -202,6 +214,8 @@ const initialize = function() {
     });
 
     percentageButton.addEventListener('click', turnToPercentage);
+
+    positveNegativeButton.addEventListener('click', swicthPositiveNegative);
 }
 
 initialize();
