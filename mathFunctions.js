@@ -11,6 +11,8 @@ const operationButtons = document.querySelectorAll('.operator');
 
 const screen = document.querySelector('.screen');
 
+const percentageButton = document.getElementById('percentage');
+
 const ac = document.getElementById('ac');
 
 const addButton = document.getElementById('add');
@@ -135,10 +137,6 @@ const onOperatorButtonClick = function() {
     }
 }
 
-
-
-
-
 const runResultWithRequest = function() {
     runningFunction.a = runningFunction.result;
     runningFunction.result = operate(runningFunction.operation, runningFunction.a, runningFunction.b);
@@ -179,6 +177,16 @@ const displayText = function() {
     }
 }
 
+const turnToPercentage = function() {
+    if (resultRequested) {
+        screen.textContent = Number(screen.textContent) / 100;
+        runningFunction.result = Number(screen.textContent);
+        runningFunction.a = runningFunction.result;
+    } else {
+        screen.textContent = Number(screen.textContent) / 100;
+    }
+}
+
 const initialize = function() {
 
     numberButtons.forEach((button) => {
@@ -192,6 +200,8 @@ const initialize = function() {
     operationButtons.forEach((button) => {
         button.addEventListener('click', onOperatorButtonClick);
     });
+
+    percentageButton.addEventListener('click', turnToPercentage);
 }
 
 initialize();
