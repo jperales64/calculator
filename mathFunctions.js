@@ -36,11 +36,15 @@ const subtract = function(a, b) {
 }
 
 const multiply = function(a, b) {
-    return a * b;
+    return Number((Math.round((a * b) * 1000) / 1000).toFixed(3));;
+
 }
 
 const divide = function(a, b) {
-    return Number((Math.round((a / b) * 100) / 100).toFixed(2));
+    if (b == 0) {
+        return "lmao"
+    }
+    return Number((Math.round((a / b) * 1000) / 1000).toFixed(3));
 
 }
 
