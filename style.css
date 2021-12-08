@@ -110,11 +110,10 @@
             .div18 {
                 grid-area: 6 / 1 / 7 / 3;
             }
-            
-            .div19 {
+            /* .div19 {
                 grid-area: 6 / 3 / 7 / 4;
-            }
+            } */
             
             .div20 {
-                grid-area: 6 / 4 / 7 / 5;
+                grid-area: 6 / 3 / 7 / 5;
             }
